@@ -1,0 +1,22 @@
+{
+  "name": "Nonims",
+  "version": "0.1.0",
+  "description": "Nonima cuttest and useful bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "discordbot"
+  ],
+  "author": "iCrawl",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "11.5.1",
+    "opusscript": "0.0.6",
+    "ffmpeg": "0.0.4",
+    "ytdl-core": "1.0.7"
+  }
+}
