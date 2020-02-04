@@ -11,7 +11,7 @@ var queue = new Map();
 bot.on("ready", () => {
     console.log(`I am ready! I am in ${bot.guilds.size} guilds`);
 
-    bot.user.setActivity(`Hello!`);
+    bot.user.setActivity(process.env.BOT_STATUS);
 });
 
 bot.on("message", async message => {
