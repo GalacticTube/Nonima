@@ -29,7 +29,7 @@ bot.on("message", async message => {
 
     if(command === 'ping') {
         const msg = await message.channel.send("Pinging...");
-        msg.edit(`Pong! Latency is ${msg.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(bot.ping)}ms`);
+        msg.edit(`Latency is ${msg.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(bot.ping)}ms`);
     }
 
     if(command === 'kick') {
@@ -59,6 +59,10 @@ bot.on("message", async message => {
             .catch(e => message.reply(`Sorry I couldn't ban them! Error: ${e}`));
         message.reply(`:white_check_mark: User banned!`);
     }
+	
+	if(command === 'avatar') {
+		message.reply(message.author.avatarURL);
+	}
 
     if(command === 'play') {
         // !play url
