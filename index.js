@@ -28,7 +28,7 @@ bot.on("message", async message => {
     }
 	
 bot.on('guildMemberAdd', member => {
-  const channel = member.guild.channels.find(ch => ch.name === 'Welcome');
+  const channel = member.guild.channels.find(ch => ch.name === 'welcome');
   if (!channel) return;
   channel.send(`Welcome to the server, ${member}`);
 });
