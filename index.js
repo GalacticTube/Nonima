@@ -37,6 +37,10 @@ bot.on('guildMemberAdd', member => {
         const msg = await message.channel.send("Pinging...");
         msg.edit(`Latency is ${msg.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(bot.ping)}ms`);
     }
+	
+    if(command === 'dev') {
+        message.reply(process.env.BOT_DEVELOPER);
+    }
 
     if(command === 'kick') {
         if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply('Sorry you do not have permission!');
