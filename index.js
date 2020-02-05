@@ -28,7 +28,7 @@ bot.on("message", async message => {
     }
 	
 bot.on('guildMemberAdd', member => {
-  const channel = member.guild.channels.find(ch => ch.name === 'welcome');
+  const channel = member.guild.channels.find(ch => ch.name === 'Welcome');
   if (!channel) return;
   channel.send(`Welcome to the server, ${member}`);
 });
@@ -140,6 +140,7 @@ function playSong(guild, song) {
             console.log(error);
         })
     dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
+	message.reply(`This is beta feature. music can lag and crash`);
 }
 
 
