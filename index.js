@@ -6,6 +6,10 @@ const ytdl = require("ytdl-core");
 
 const prefix  = process.env.BOT_PREFIX;
 
+const Dev = "NJ3ZNAY0MY";
+
+const HDev = "";
+
 var queue = new Map();
 
 bot.on("ready", () => {
@@ -28,7 +32,7 @@ bot.on("message", async message => {
     }
 	
 bot.on('guildMemberAdd', member => {
-  const channel = member.guild.channels.find(ch => ch.name === 'welcome');
+  const channel = member.guild.channels.find(ch => ch.name === 'Welcome');
   if (!channel) return;
   channel.send(`Welcome to the server, ${member}`);
 });
@@ -36,10 +40,6 @@ bot.on('guildMemberAdd', member => {
     if(command === 'ping') {
         const msg = await message.channel.send("Pinging...");
         msg.edit(`Latency is ${msg.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(bot.ping)}ms`);
-    }
-	
-    if(command === 'dev') {
-        message.reply(process.env.BOT_DEVELOPER);
     }
 
     if(command === 'kick') {
@@ -73,12 +73,16 @@ bot.on('guildMemberAdd', member => {
 	if(command === 'avatar') {
 		message.reply(message.author.avatarURL);
 	}
+	
+    if (command === 'DailyMeme') {
+	const msg = await message.channel.send(process.env.BOT_DMEME);
+    }
 
     if(command === 'play') {
         // !play url
 
         play(message, serverQueue);
-		message.reply(`This is beta feature. music can lag and crash`);
+		message.reply(`This is beta feature. music sometimes can lag and crash`);
     }
 
 });
