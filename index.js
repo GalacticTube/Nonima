@@ -75,7 +75,7 @@ bot.on('guildMemberAdd', member => {
 	}
 	
     if (command === 'DailyMeme') {
-	const msg = await message.channel.send(process.env.BOT_DMEME);
+	message.reply(process.env.BOT_DMEME);
     }
 
     if(command === 'play') {
