@@ -26,10 +26,16 @@ bot.on("message", async message => {
     if(command === 'hello') {
         message.reply('Hello!');
     }
+	
+bot.on('guildMemberAdd', member => {
+  const channel = member.guild.channels.find(ch => ch.name === 'Welcome');
+  if (!channel) return;
+  channel.send(`Welcome to the server, ${member}`);
+});
 
     if(command === 'ping') {
         const msg = await message.channel.send("Pinging...");
-        msg.edit(` ``Latency is ${msg.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(bot.ping)}ms`` `);
+        msg.edit(`Latency is ${msg.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(bot.ping)}ms`);
     }
 
     if(command === 'kick') {
