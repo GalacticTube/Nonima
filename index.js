@@ -6,9 +6,11 @@ const ytdl = require("ytdl-core");
 
 const prefix  = process.env.BOT_PREFIX;
 
-const Dev = "NJ3ZNAY0MY";
+const Dev = 'NJ3ZNAY0MY';
 
-const HDev = "ItzDerockYT";
+const HDev = 'ItzDerockYT';
+
+const mainte = process.env.BOT_MAINTENCE;
 
 var queue = new Map();
 
@@ -38,8 +40,13 @@ bot.on('guildMemberAdd', member => {
 });
 
     if(command === 'ping') {
+	    if(mainte === '1' {
         const msg = await message.channel.send("Pinging...");
         msg.edit(`Latency is ${msg.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(bot.ping)}ms`);
+    }
+	else {
+	message.reply(`Maintence Mode`);	
+	}
     }
 	
     if(command === 'devs') {
@@ -47,7 +54,7 @@ bot.on('guildMemberAdd', member => {
 	.setColor('#00ff7f')
 	.setTitle('Developers')
 	.setDescription('NJ3ZNAY0MY_ and ItzDerockYT');
-	channel.send(devemb);
+	const msg = await message.channel.send(devemb);
     }
 
     if(command === 'kick') {
