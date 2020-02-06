@@ -6,12 +6,6 @@ const ytdl = require("ytdl-core");
 
 const prefix  = process.env.BOT_PREFIX;
 
-const Dev = 'NJ3ZNAY0MY';
-
-const HDev = 'ItzDerockYT';
-
-const mainte = process.env.BOT_MAINTENCE;
-
 var queue = new Map();
 
 bot.on("ready", () => {
@@ -40,11 +34,8 @@ bot.on('guildMemberAdd', member => {
 });
 
 if(command === 'ping') {
-    if(mainte == '1') {
         const msg = await message.channel.send("Pinging...");
         msg.edit(`Latency is ${msg.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(bot.ping)}ms`);
-    } else {
-	message.reply(`:white_check_mark: User kicked!`);
     }
 	
     if(command === 'devs') {
