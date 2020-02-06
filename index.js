@@ -8,7 +8,7 @@ const prefix  = process.env.BOT_PREFIX;
 
 const Dev = "NJ3ZNAY0MY";
 
-const HDev = "";
+const HDev = "ItzDerockYT";
 
 var queue = new Map();
 
@@ -43,13 +43,11 @@ bot.on('guildMemberAdd', member => {
     }
 	
     if(command === 'devs') {
-	const devEmbed = new Discord.RichEmbed()
+	 const devemb = new Discord.RichEmbed()
 	.setColor('#00ff7f')
 	.setTitle('Developers')
-	.addField('Dev', 'NJ3ZNAY0MY_', true)
-	.addField('Dev', 'ItzDerockYT', true)
-	
-	channel.send(devEmbed);
+	.setDescription('NJ3ZNAY0MY_ and ItzDerockYT');
+	channel.send(devemb);
     }
 
     if(command === 'kick') {
