@@ -39,14 +39,12 @@ bot.on('guildMemberAdd', member => {
   channel.send(`Welcome to the server, ${member}`);
 });
 
-    if(command === 'ping') {
-	    if(mainte === '1' {
+if(command === 'ping') {
+    if(mainte == '1') {
         const msg = await message.channel.send("Pinging...");
         msg.edit(`Latency is ${msg.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(bot.ping)}ms`);
-    }
-	else {
-	message.reply(`Maintence Mode`);	
-	}
+    } else {
+	message.reply(`:white_check_mark: User kicked!`);
     }
 	
     if(command === 'devs') {
