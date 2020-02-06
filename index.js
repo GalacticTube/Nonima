@@ -48,6 +48,8 @@ bot.on('guildMemberAdd', member => {
 	.setTitle('Developers')
 	.addField('Dev', 'NJ3ZNAY0MY_', true)
 	.addField('Dev', 'ItzDerockYT', true)
+	
+	channel.send(devEmbed);
     }
 
     if(command === 'kick') {
