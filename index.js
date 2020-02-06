@@ -1,7 +1,5 @@
 const Discord = require('discord.js');
 
-const fs - require('fs');
-
 const bot = new Discord.Client();
 
 const ytdl = require("ytdl-core");
@@ -9,22 +7,6 @@ const ytdl = require("ytdl-core");
 const prefix  = process.env.BOT_PREFIX;
 
 var queue = new Map();
-
-let userData = JSON.parse(fs.readFileSync('Storage/userData.json', 'utf8'));
-
-
-let sender = message.autor;
-
-
-
-if (!userData[sender.id + message.guild.id]) userData[sender.id + message.guild.id] = {}
-if (!userData[sender.id + message.guild.id].money) userData[sender.id + message.guild.id].money = 100
-
-
-fs.writeFile('Storage/userData.json', JSON.stringify(userData), (err) => {
-	if (err) console.error(err);
-})
-
 
 bot.on("ready", () => {
     console.log(`I am ready! I am in ${bot.guilds.size} guilds`);
