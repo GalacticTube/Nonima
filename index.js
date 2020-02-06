@@ -41,6 +41,14 @@ bot.on('guildMemberAdd', member => {
         const msg = await message.channel.send("Pinging...");
         msg.edit(`Latency is ${msg.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(bot.ping)}ms`);
     }
+	
+    if(command === 'devs') {
+	const devEmbed = new Discord.RichEmbed()
+	.setColor('#00ff7f')
+	.setTitle('Developers')
+	.addField('Dev', 'NJ3ZNAY0MY_', true)
+	.addField('Dev', 'ItzDerockYT', true)
+    }
 
     if(command === 'kick') {
         if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply('Sorry you do not have permission!');
@@ -73,10 +81,6 @@ bot.on('guildMemberAdd', member => {
 	if(command === 'avatar') {
 		message.reply(message.author.avatarURL);
 	}
-	
-    if (command === 'DailyMeme') {
-	message.reply(process.env.BOT_DMEME);
-    }
 
     if(command === 'play') {
         // !play url
