@@ -10,7 +10,6 @@ var queue = new Map();
 
 bot.on("ready", () => {
     console.log(`I am ready! I am in ${bot.guilds.size} guilds`);
-	var bruh = Date.now();
 
     bot.user.setActivity(process.env.BOT_STATUS);
 });
@@ -31,9 +30,16 @@ bot.on('guildMemberAdd', member => {
 });
 
 if(command === 'uptime') {
-	var bruhAfter = bruh - Date.now();
-	const msg = await message.channel.send(bruhAfter);
-   }
+  module.exports.run = async (bot, message, args) => {
+	function duration(ms) {
+		const sec = Math.floor((ms / 1000) % 60).toString()
+		const min = Math.floor((ms / (1000 * 60)) % 60).toString()
+		const hrs = Math.floor((ms / (1000 * 60 * 60)) % 60).toString()
+		const days = Math.floor((ms / (1000 * 60 * 60 * 24)) % 60).toString()
+		return `${days.padStart(1, '0')} days, ${hrs.padStart(2, '0')} hours, ${min.padStart(2, '0')} Minutes, ${sec.padStart(2, '0')} secounds, `
+		}
+	message.channel.send(`I have been online for: ${duration(bot.uptime)}`)
+  }
 
 if(command === 'ping') {
         const msg = await message.channel.send("Pinging...");
@@ -44,9 +50,8 @@ if(command === 'ping') {
 	 const devemb = new Discord.RichEmbed()
 	.setColor('#00ff7f')
 	.setTitle('Developers')
-	.setDescription('NJ3ZNAY0MY_ and ItzDerockYT')
-	.setTimestamp()
-	.setFooter('Nonima', 'https://files.fm/thumb_show.php?i=gpv5w7ra')
+	.setDescription('NJ3ZNAY0MY_ and ItzDerockYT');
+	.setFooter('Nonima', 'https://files.fm/thumb_show.php?i=gpv5w7ra');
 	const msg = await message.channel.send(devemb);
     }
 
