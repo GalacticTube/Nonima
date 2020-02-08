@@ -23,8 +23,13 @@ bot.on("message", async message => {
 
     const serverQueue = queue.get(message.guild.id);
 
-    if(command === 'hello') {
-        message.reply('Hello!');
+    if(command === 'reset') {
+        const resetma = new Discord.RichEmbed()
+		.setColor('#0099ff')
+		.setAuthor('Reseting', 'https://discordemoji.com/assets/emoji/8104LoadingEmote.gif')
+		.setTimestamp()
+		.setFooter('Nonima', 'https://files.fm/thumb_show.php?i=gpv5w7ra');
+		const msg = await message.channel.send(resetma);
     }
 	
 bot.on('guildMemberAdd', member => {
@@ -43,14 +48,16 @@ if(command === 'ping') {
 	.setColor('#00ff7f')
 	.setTitle('Developers')
 	.setDescription('NJ3ZNAY0MY_ and ItzDerockYT');
+	.setTimestamp()
+	.setFooter('Nonima', 'https://files.fm/thumb_show.php?i=gpv5w7ra');
 	const msg = await message.channel.send(devemb);
     }
 	
 	if(command === 'help') {
 	 const helpd = new Discord.RichEmbed()
 	.setColor('#00ff7f')
-	.setTitle('Developers')
-	.setDescription('In the future');
+	.setTitle('Help')
+	.setDescription('Prefix is .');
 	const msg = await message.channel.send(helpd);
     }
 
