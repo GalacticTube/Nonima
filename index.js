@@ -10,6 +10,7 @@ var queue = new Map();
 
 bot.on("ready", () => {
     console.log(`I am ready! I am in ${bot.guilds.size} guilds`);
+	var bruh = Date.now();
 
     bot.user.setActivity(process.env.BOT_STATUS);
 });
@@ -22,21 +23,17 @@ bot.on("message", async message => {
     const command = args.shift().toLowerCase();
 
     const serverQueue = queue.get(message.guild.id);
-
-    if(command === 'reset') {
-        const resetma = new Discord.RichEmbed()
-		.setColor('#0099ff')
-		.setAuthor('Reseting', 'https://discordemoji.com/assets/emoji/8104LoadingEmote.gif')
-		.setTimestamp()
-		.setFooter('Nonima', 'https://files.fm/thumb_show.php?i=gpv5w7ra');
-		const msg = await message.channel.send(resetma);
-    }
 	
 bot.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find(ch => ch.name === 'Welcome');
   if (!channel) return;
   channel.send(`Welcome to the server, ${member}`);
 });
+
+if(command === 'uptime') {
+	var bruhAfter = bruh - Date.now();
+	const msg = await message.channel.send(bruhAfter);
+   }
 
 if(command === 'ping') {
         const msg = await message.channel.send("Pinging...");
@@ -51,14 +48,6 @@ if(command === 'ping') {
 	.setTimestamp()
 	.setFooter('Nonima', 'https://files.fm/thumb_show.php?i=gpv5w7ra');
 	const msg = await message.channel.send(devemb);
-    }
-	
-	if(command === 'help') {
-	 const helpd = new Discord.RichEmbed()
-	.setColor('#00ff7f')
-	.setTitle('Help')
-	.setDescription('Prefix is .');
-	const msg = await message.channel.send(helpd);
     }
 
     if(command === 'kick') {
