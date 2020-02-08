@@ -45,7 +45,6 @@ if(command === 'ping') {
 	.setColor('#00ff7f')
 	.setTitle('Developers')
 	.setDescription('NJ3ZNAY0MY_ and ItzDerockYT');
-	.setTimestamp()
 	.setFooter('Nonima', 'https://files.fm/thumb_show.php?i=gpv5w7ra');
 	const msg = await message.channel.send(devemb);
     }
