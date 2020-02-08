@@ -59,7 +59,7 @@ if(command === 'ping') {
     }
 	
     if(command === 'uptime') {
-	const utim Discord.RichEmbed()
+	const utim = Discord.RichEmbed()
 	.setColor('#0099ff')
 	.setTitle('Some title')
 	.setURL('https://discord.js.org/')
