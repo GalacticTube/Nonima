@@ -57,13 +57,13 @@ if(command === 'ping') {
         message.reply(`:white_check_mark: User kicked!`);
     }
 	
-    if(command === 'uptime
+    if(command === 'uptime') {
 	const utim Discord.RichEmbed()
 	.setColor('#0099ff')
 	.setTitle('Some title')
 	.setURL('https://discord.js.org/')
 	.setTimestamp()
-	.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
+	.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png')
 	    const msg = await message.channel.send(utim);
 	}
 
