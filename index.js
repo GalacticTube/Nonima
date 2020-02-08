@@ -45,6 +45,14 @@ if(command === 'ping') {
 	.setDescription('NJ3ZNAY0MY_ and ItzDerockYT');
 	const msg = await message.channel.send(devemb);
     }
+	
+	if(command === 'help') {
+	 const helpd = new Discord.RichEmbed()
+	.setColor('#00ff7f')
+	.setTitle('Developers')
+	.setDescription('In the future');
+	const msg = await message.channel.send(helpd);
+    }
 
     if(command === 'kick') {
         if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply('Sorry you do not have permission!');
