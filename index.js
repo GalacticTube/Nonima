@@ -29,18 +29,6 @@ bot.on('guildMemberAdd', member => {
   channel.send(`Welcome to the server, ${member}`);
 });
 
-if(command === 'uptime') {
-  module.exports.run = async (bot, message, args) => {
-	function duration(ms) {
-		const sec = Math.floor((ms / 1000) % 60).toString()
-		const min = Math.floor((ms / (1000 * 60)) % 60).toString()
-		const hrs = Math.floor((ms / (1000 * 60 * 60)) % 60).toString()
-		const days = Math.floor((ms / (1000 * 60 * 60 * 24)) % 60).toString()
-		return `${days.padStart(1, '0')} days, ${hrs.padStart(2, '0')} hours, ${min.padStart(2, '0')} Minutes, ${sec.padStart(2, '0')} secounds, `
-		}
-	message.channel.send(`I have been online for: ${duration(bot.uptime)}`)
-  }
-
 if(command === 'ping') {
         const msg = await message.channel.send("Pinging...");
         msg.edit(`Latency is ${msg.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(bot.ping)}ms`);
@@ -68,6 +56,16 @@ if(command === 'ping') {
             .catch(e => message.reply(`Sorry I couldn't kick them! Error: ${e}`));
         message.reply(`:white_check_mark: User kicked!`);
     }
+	
+    if(command === 'uptime
+	const utim Discord.RichEmbed()
+	.setColor('#0099ff')
+	.setTitle('Some title')
+	.setURL('https://discord.js.org/')
+	.setTimestamp()
+	.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
+	    const msg = await message.channel.send(utim);
+	}
 
     if(command === 'ban') {
         if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply('Sorry you do not have permission!');
