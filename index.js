@@ -43,6 +43,22 @@ if(command === 'ping') {
 	.setFooter('Nonima', 'https://files.fm/thumb_show.php?i=gpv5w7ra')
 	const msg = await message.channel.send(devemb);
     }
+	
+	if(command === 'help') {
+		const helpwin = new Discord.RichEmbed()
+		.setColor('#7f50ff')
+		.setTitle('Help')
+		.setDescription('Prefix is .')
+		.addField('help', 'showing this message', true)
+		.addField('kick', 'kick specified user', true)
+		.addField('ban', 'ban specified user', true)
+		.addField('play', 'plays a music on voice channel (need to enter link)', true)
+		.addField('uptime', 'Showing uptime', true)
+		.addFiled('devs', 'Showing bot devs', true)
+		.setTimestamp()
+		.setFooter('Nonima', 'https://files.fm/thumb_show.php?i=gpv5w7ra')
+		const msg = await message.channel.send(helpwin);
+	}
 
     if(command === 'kick') {
         if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply('Sorry you do not have permission!');
@@ -59,13 +75,14 @@ if(command === 'ping') {
     }
 	
     if(command === 'uptime') {
-	const utim = Discord.RichEmbed()
+	const utimres = Discord.RichEmbed()
 	.setColor('#0099ff')
-	.setTitle('Some title')
-	.setURL('https://discord.js.org/')
+	.setTitle('click here')
+	.setURL('https://nonima.freshstatus.io/')
+	.setDescription('Uptime Stats')
 	.setTimestamp()
 	.setFooter('Nonima', 'https://files.fm/thumb_show.php?i=gpv5w7ra')
-	    const msg = await message.channel.send(utim);
+	    const msg = await message.channel.send(utimres);
 	}
 
     if(command === 'ban') {
