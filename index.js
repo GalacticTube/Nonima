@@ -92,7 +92,7 @@ if(!deleteCount || deleteCount < 2 || deleteCount > 250)
     }
 	
     if(command === 'uptime') {
-		message.reply('nonima.freshstatus.io');
+		message.channel.send('https://nonima.freshstatus.io/');
 	}
 
     if(command === 'ban') {
@@ -117,6 +117,7 @@ if(!deleteCount || deleteCount < 2 || deleteCount > 250)
 		serverQueue.voiceChannel.leave();
         queue.delete(guild.id);
         return;
+	message.channel.send('Stopped Music');
 	}
 
     if(command === 'play') {
