@@ -116,8 +116,8 @@ if(!deleteCount || deleteCount < 2 || deleteCount > 250)
 	if(command === 'stop') {
 		serverQueue.voiceChannel.leave();
         queue.delete(guild.id);
-        return;
 	message.channel.send('Stopped Music');
+        return;
 	}
 
     if(command === 'play') {
