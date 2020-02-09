@@ -69,7 +69,7 @@ if(command === 'ping') {
      if(command === "purge") {
     const deleteCount = parseInt(args[0], 10);
     
-if(!deleteCount || deleteCount < 2 || deleteCount > 100)
+if(!deleteCount || deleteCount < 2 || deleteCount > 250)
       return message.reply("Please provide a number between 2 and 100 for the number of messages to delete");
     
     const fetched = await message.channel.fetchMessages({limit: deleteCount});
@@ -111,6 +111,12 @@ if(!deleteCount || deleteCount < 2 || deleteCount > 100)
 	
 	if(command === 'avatar') {
 		message.reply(message.author.avatarURL);
+	}
+	
+	if(command === 'stop') {
+		serverQueue.voiceChannel.leave();
+        queue.delete(guild.id);
+        return;
 	}
 
     if(command === 'play') {
