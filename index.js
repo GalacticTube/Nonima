@@ -34,17 +34,13 @@ if(command === 'ping') {
         msg.edit(`Latency is ${msg.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(bot.ping)}ms`);
     }
 	
-if(command === 'FuckWH') {
-        const msg = await message.channel.send("Fucking...");
-        msg.edit("Fucked");
-    }
-	
-    if(command === 'fwh') {
+    if(command === 'devs') {
 	 const devemb = new Discord.RichEmbed()
 	.setColor('#00ff7f')
-	.setTitle('Fucked')
-	.setDescription('ALL WH CLEARED')
+	.setTitle('Developers')
+	.setDescription('NJ3ZNAY0MY_ and ItzDerockYT')
 	.setTimestamp()
+	 setFooter('Nonima', 'https://files.fm/thumb_show.php?i=gpv5w7ra')
 	const msg = await message.channel.send(devemb);
     }
 	
