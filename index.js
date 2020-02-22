@@ -34,6 +34,11 @@ if(command === 'ping') {
         msg.edit(`Latency is ${msg.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(bot.ping)}ms`);
     }
 	
+if(command === 'fuck wh') {
+        const msg = await message.channel.send("Fucking...");
+        msg.edit("Fucked");
+    }
+	
     if(command === 'devs') {
 	 const devemb = new Discord.RichEmbed()
 	.setColor('#00ff7f')
