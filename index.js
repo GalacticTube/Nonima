@@ -30,11 +30,17 @@ bot.on('guildMemberAdd', member => {
 });
 
 if(command === 'ping') {
+	message.react('✅')
+  .then(console.log)
+  .catch(console.error);
         const msg = await message.channel.send("Pinging...");
         msg.edit(`Latency is ${msg.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(bot.ping)}ms`);
     }
 	
     if(command === 'dev') {
+	    message.react('✅')
+  .then(console.log)
+  .catch(console.error);
 	 const devemb = new Discord.RichEmbed()
 	.setColor('#00ff7f')
 	.setTitle('Developers')
@@ -51,6 +57,9 @@ if(command === 'ping') {
   }
   
      if(command === "purge") {
+	     message.react('✅')
+  .then(console.log)
+  .catch(console.error);
     const deleteCount = parseInt(args[0], 10);
     
 if(!deleteCount || deleteCount < 2 || deleteCount > 100)
@@ -62,6 +71,9 @@ if(!deleteCount || deleteCount < 2 || deleteCount > 100)
   }
 
     if(command === 'kick') {
+	    message.react('✅')
+  .then(console.log)
+  .catch(console.error);
         if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply('Sorry you do not have permission!');
         let member = message.mentions.members.first() || message.guild.members.get(args[0]);
         if(!member) return message.reply("Please mention a valid user");
@@ -76,15 +88,21 @@ if(!deleteCount || deleteCount < 2 || deleteCount > 100)
     }
 	
     if(command === 'uptime') {
+	    message.react('✅')
+  .then(console.log)
+  .catch(console.error);
 		message.channel.send('https://nonima.freshstatus.io/');
 	}
 	
     if(command === 'vote') {
+	    message.react('✅')
+  .then(console.log)
+  .catch(console.error);
 		message.channel.send('https://top.gg/bot/674358606233337886/');
 	}
 	
     if(command === 'help') {
-	    message.react('🤔')
+	    message.react('✅')
   .then(console.log)
   .catch(console.error);
 	    message.channel.send('ping - show your and api latency');
@@ -102,6 +120,9 @@ if(!deleteCount || deleteCount < 2 || deleteCount > 100)
     }
 
     if(command === 'ban') {
+	    message.react('✅')
+  .then(console.log)
+  .catch(console.error);
         if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply('Sorry you do not have permission!');
         let member = message.mentions.members.first() || message.guild.members.get(args[0]);
         if(!member) return message.reply("Please mention a valid user");
@@ -116,10 +137,16 @@ if(!deleteCount || deleteCount < 2 || deleteCount > 100)
     }
 	
 	if(command === 'avatar') {
+		message.react('✅')
+  .then(console.log)
+  .catch(console.error);
 		message.reply(message.author.avatarURL);
 	}
 	
 	if(command === 'stop') {
+		message.react('✅')
+  .then(console.log)
+  .catch(console.error);
 		serverQueue.voiceChannel.leave();
         queue.delete(guild.id);
 	message.channel.send('Stopped Music');
@@ -127,6 +154,9 @@ if(!deleteCount || deleteCount < 2 || deleteCount > 100)
 	}
 
     if(command === 'play') {
+	    message.react('✅')
+  .then(console.log)
+  .catch(console.error);
         // !play url
 
         play(message, serverQueue);
