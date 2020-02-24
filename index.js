@@ -49,7 +49,10 @@ if(command === 'ping') {
 	.setFooter('Nonima', 'https://cdn.discordapp.com/avatars/572811135305252895/2ce1d1a63380376fd15d10f1ffa58d50.png?size=2048')
 	const msg = await message.channel.send(devemb);
     }
-	
+	if(command === 'dev') {
+	    message.react('✅')
+  .then(console.log)
+  .catch(console.error);
     const helpEmbed = new Discord.RichEmbed()
     .setColor('#0099ff')
     .setTitle('Help')
