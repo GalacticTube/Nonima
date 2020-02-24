@@ -84,6 +84,9 @@ if(!deleteCount || deleteCount < 2 || deleteCount > 100)
 	}
 	
     if(command === 'help') {
+	    message.react('🤔')
+  .then(console.log)
+  .catch(console.error);
 	    message.channel.send('ping - show your and api latency');
 	    message.channel.send('ban - ban person on server');
 	    message.channel.send('kick - kick person from server');
