@@ -34,13 +34,13 @@ if(command === 'ping') {
         msg.edit(`Latency is ${msg.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(bot.ping)}ms`);
     }
 	
-    if(command === 'devs') {
+    if(command === 'dev') {
 	 const devemb = new Discord.RichEmbed()
 	.setColor('#00ff7f')
 	.setTitle('Developers')
-	.setDescription('NJ3ZNAY0MY_ and ItzDerockYT')
+	.setDescription('NJ3ZNAY0MY_')
 	.setTimestamp()
-	.setFooter('Nonima', 'https://files.fm/thumb_show.php?i=gpv5w7ra')
+	.setFooter('Nonima', 'https://files.fm/thumb_show.php?i=69fkru7r')
 	const msg = await message.channel.send(devemb);
     }
 	
@@ -93,6 +93,10 @@ if(!deleteCount || deleteCount < 2 || deleteCount > 100)
 	
     if(command === 'uptime') {
 		message.channel.send('https://nonima.freshstatus.io/');
+	}
+	
+    if(command === 'vote') {
+		message.channel.send('https://top.gg/bot/674358606233337886/');
 	}
 
     if(command === 'ban') {
