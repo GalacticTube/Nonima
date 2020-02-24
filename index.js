@@ -6,8 +6,6 @@ const ytdl = require("ytdl-core");
 
 const prefix  = process.env.BOT_PREFIX;
 
-const dev_ids = ["572811135305252895"];
-
 var queue = new Map();
 
 bot.on("ready", () => {
@@ -38,46 +36,6 @@ if(command === 'ping') {
         const msg = await message.channel.send("Pinging...");
         msg.edit(`Latency is ${msg.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(bot.ping)}ms`);
     }
-	
-if(command === 'invall') {
-	var allowedToUse = false;
-dev_ids.forEach(id => {
-    if(message.author.id == id)
-        allowedToUse = true;
-});
-
-if(allowedToUse) {
-    let invites = ["ignore me"], ct = 0;
-    client.guilds.forEach(g => {
-        g.fetchInvites().then(guildInvites => {
-            invites[invites.length + 1] = (g + " - `Invites: " + guildInvites.array().join(", ") + "`");
-            ct++;
-
-            if(ct >= client.guilds.size) {
-                invites.forEach((invite, i) => {
-                    if(invite == undefined)
-                        invites.splice(i, 1);
-                }); 
-
-                invites.shift();
-                invites.forEach((invite, i) => invites[i] = "- " + invite);
-                invites = invites.join("\n\n");
-
-                let embed = new Discord.RichEmbed()
-                .setTitle("All Invites:")
-                .setDescription(invites);
-
-                message.channel.send(embed);
-            }
-        }).catch(err => {
-            ct++;
-        });
-    });
-}
-else {
-    message.reply("this command can only be used by a developer.");
-}
-}
 	
     if(command === 'dev') {
 	    message.react('✅')
