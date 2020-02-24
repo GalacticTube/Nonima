@@ -49,7 +49,7 @@ if(command === 'ping') {
 	.setFooter('Nonima', 'https://cdn.discordapp.com/avatars/572811135305252895/2ce1d1a63380376fd15d10f1ffa58d50.png?size=2048')
 	const msg = await message.channel.send(devemb);
     }
-	if(command === 'dev') {
+	if(command === 'help') {
 	    message.react('✅')
   .then(console.log)
   .catch(console.error);
@@ -71,7 +71,7 @@ if(command === 'ping') {
     .addField('avatar', 'send your avatar', true)
     .setTimestamp()
     .setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
-	channel.send(helpEmbed);
+	const msg = await message.channel.send(helpEmbed);
 }
 	
 	if(command === "say") {
