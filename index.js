@@ -50,6 +50,27 @@ if(command === 'ping') {
 	const msg = await message.channel.send(devemb);
     }
 	
+    const helpEmbed = new Discord.RichEmbed()
+    .setColor('#0099ff')
+    .setTitle('Help')
+    .setDescription('More command will be added in the future.')
+    .setThumbnail('https://cdn.discordapp.com/avatars/572811135305252895/2ce1d1a63380376fd15d10f1ffa58d50.png')
+    .addField('ping', 'show your ping and api latency', true)
+    .addField('ban', 'ban person on server', true)
+    .addField('kick', 'kick person from server', true)
+    .addField('purge', 'clear chat (max 100 messages at once)', true)
+    .addField('play', 'play music (need YouTube link)', true)
+    .addField('stop', 'stop music', true)
+    .addField('say', 'bot send your message', true)
+    .addField('dev', 'show developer nick and tag', true)
+    .addField('uptime', 'send link to bot uptime', true)
+    .addField('vote', 'this command redirecting to top.gg vote website', true)
+    .addField('avatar', 'send your avatar', true)
+    .setTimestamp()
+    .setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
+	channel.send(helpEmbed);
+}
+	
 	if(command === "say") {
     const sayMessage = args.join(" ");
 	message.delete().catch(O_o=>{}); 
@@ -101,23 +122,6 @@ if(!deleteCount || deleteCount < 2 || deleteCount > 100)
 		message.channel.send('https://top.gg/bot/674358606233337886/');
 	}
 	
-    if(command === 'help') {
-	    message.react('✅')
-  .then(console.log)
-  .catch(console.error);
-	    message.channel.send('ping - show your and api latency');
-	    message.channel.send('ban - ban person on server');
-	    message.channel.send('kick - kick person from server');
-	    message.channel.send('purge - clear chat (max 100 messages at once)');
-	    message.channel.send('play - play music (need YouTube link)');
-	    message.channel.send('stop - stop music');
-	    message.channel.send('say - bot send your message');
-	    message.channel.send('dev - show developer nick and tag');
-	    message.channel.send('uptime - send link to bot uptime');
-	    message.channel.send('vote - this command redirecting to top.gg vote website');
-	    message.channel.send('avatar - send your avatar');
-	    message.channel.send('more in future');
-    }
 
     if(command === 'ban') {
 	    message.react('✅')
