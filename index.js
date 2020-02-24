@@ -40,7 +40,7 @@ if(command === 'ping') {
 	.setTitle('Developers')
 	.setDescription('NJ3ZNAY0MY_#6839')
 	.setTimestamp()
-	.setFooter('Nonima', 'https://files.fm/thumb_show.php?i=69fkru7r')
+	.setFooter('Nonima', 'https://cdn.discordapp.com/avatars/572811135305252895/2ce1d1a63380376fd15d10f1ffa58d50.png?size=2048')
 	const msg = await message.channel.send(devemb);
     }
 	
