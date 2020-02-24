@@ -38,27 +38,11 @@ if(command === 'ping') {
 	 const devemb = new Discord.RichEmbed()
 	.setColor('#00ff7f')
 	.setTitle('Developers')
-	.setDescription('NJ3ZNAY0MY_')
+	.setDescription('NJ3ZNAY0MY_#6839')
 	.setTimestamp()
 	.setFooter('Nonima', 'https://files.fm/thumb_show.php?i=69fkru7r')
 	const msg = await message.channel.send(devemb);
     }
-	
-	if(command === 'help') {
-		const helpwin = new Discord.RichEmbed()
-		.setColor('#7f50ff')
-		.setTitle('Help')
-		.setDescription('Prefix is .')
-		.addField('help', 'showing this message', true)
-		.addField('kick', 'kick specified user', true)
-		.addField('ban', 'ban specified user', true)
-		.addField('play', 'plays a music on voice channel (need to enter link)', true)
-		.addField('uptime', 'Showing uptime', true)
-		.addFiled('devs', 'Showing bot devs', true)
-		.setTimestamp()
-		.setFooter('Nonima', 'https://files.fm/thumb_show.php?i=gpv5w7ra')
-		const msg = await message.channel.send(helpwin);
-	}
 	
 	if(command === "say") {
     const sayMessage = args.join(" ");
@@ -98,6 +82,21 @@ if(!deleteCount || deleteCount < 2 || deleteCount > 100)
     if(command === 'vote') {
 		message.channel.send('https://top.gg/bot/674358606233337886/');
 	}
+	
+    if(command === 'help') {
+	    message.channel.send('ping - show your and api latency');
+	    message.channel.send('ban - ban person on server');
+	    message.channel.send('kick - kick person from server');
+	    message.channel.send('purge - clear chat (max 100 messages at once)');
+	    message.channel.send('play - play music (need YouTube link)');
+	    message.channel.send('stop - stop music');
+	    message.channel.send('say - bot send your message');
+	    message.channel.send('dev - show developer nick and tag');
+	    message.channel.send('uptime - send link to bot uptime');
+	    message.channel.send('vote - this command redirecting to top.gg vote website');
+	    message.channel.send('avatar - send your avatar');
+	    message.channel.send('more in future');
+    }
 
     if(command === 'ban') {
         if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply('Sorry you do not have permission!');
