@@ -70,7 +70,7 @@ if(command === 'ping') {
     .addField('vote', 'this command redirecting to top.gg vote website', true)
     .addField('avatar', 'send your avatar', true)
     .setTimestamp()
-    .setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
+    .setFooter('Nonima', 'https://cdn.discordapp.com/avatars/572811135305252895/2ce1d1a63380376fd15d10f1ffa58d50.png?size=2048')
 	const msg = await message.channel.send(helpEmbed);
 }
 	
