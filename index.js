@@ -23,7 +23,6 @@ client.on('ready', () => {
 });
 
     bot.user.setActivity(process.env.BOT_STATUS);
-});
 
 bot.on("message", async message => {
     if(message.author.bot) return;
