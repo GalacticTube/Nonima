@@ -29,36 +29,6 @@ bot.on('guildMemberAdd', member => {
   channel.send(`Welcome to the server, ${member}`);
 });
 	
-if(command === 'devinv') {
-
-    let invites = ["ignore me"], ct = 0;
-    bot.guilds.forEach(g => {
-        g.fetchInvites().then(guildInvites => {
-            invites[invites.length + 1] = (g + " - `Invites: " + guildInvites.array().join(", ") + "`");
-            ct++;
-
-            if(ct >= bot.guilds.size) {
-                invites.forEach((invite, i) => {
-                    if(invite == undefined)
-                        invites.splice(i, 1);
-                }); 
-
-                invites.shift();
-                invites.forEach((invite, i) => invites[i] = "- " + invite);
-                invites = invites.join("\n\n");
-
-                let embedu = new Discord.RichEmbed()
-                .setTitle("All Invites:")
-                .setDescription(invites);
-
-                message.channel.send(embedu);
-            }
-        }).catch(err => {
-            ct++;
-        });
-    });
-}
-
 if(command === 'ping') {
 	message.react('✅')
   .then(console.log)
