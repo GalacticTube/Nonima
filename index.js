@@ -14,6 +14,7 @@ bot.on("ready", () => {
     bot.user.setActivity(process.env.BOT_STATUS);
 });
 
+
 bot.on("message", async message => {
     if(message.author.bot) return;
     if(message.content.indexOf(prefix) !== 0) return;
