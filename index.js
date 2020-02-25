@@ -6,8 +6,6 @@ const ytdl = require("ytdl-core");
 
 const prefix  = process.env.BOT_PREFIX;
 
-const dev_ids = ["572811135305252895"];
-
 var queue = new Map();
 
 bot.on("ready", () => {
@@ -32,13 +30,7 @@ bot.on('guildMemberAdd', member => {
 });
 	
 if(command === 'devinv') {
-	var allowedToUse = false;
-dev_ids.forEach(id => {
-    if(message.author.id == id)
-        allowedToUse = true;
-});
-	
-	if(allowedToUse) {
+
     let invites = ["ignore me"], ct = 0;
     bot.guilds.forEach(g => {
         g.fetchInvites().then(guildInvites => {
@@ -65,10 +57,6 @@ dev_ids.forEach(id => {
             ct++;
         });
     });
-}
-else {
-    message.reply("this command can only be used by a developer.");
-}
 }
 
 if(command === 'ping') {
