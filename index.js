@@ -85,7 +85,8 @@ if(command === 'ping') {
 	     message.react('✅')
   .then(console.log)
   .catch(console.error);
-    const deleteCount = parseInt(args[0], 10);
+	if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply('Sorry you do not have permission!');
+	     const deleteCount = parseInt(args[0], 10);
     
 if(!deleteCount || deleteCount < 2 || deleteCount > 100)
       return message.reply("Please provide a number between 2 and 100 for the number of messages to delete");
@@ -111,6 +112,21 @@ if(!deleteCount || deleteCount < 2 || deleteCount > 100)
             .catch(e => message.reply(`Sorry I couldn't kick them! Error: ${e}`));
         message.reply(`:white_check_mark: User kicked!`);
     }
+	
+	if(command === 'devban') {
+  if (message.author.id === "572811135305252895") {
+	  let member = message.mentions.members.first() || message.guild.members.get(args[0]);
+        if(!member) return message.reply("Please mention a valid user");
+        if(!member.kickable) return message.channel.send("Sorry I cannot kick that person! Do they have a higher role?");
+
+        let reason = args.slice(1).join(' ');
+        if(!reason) reason = "No reason provided";
+
+        await member.kick(reason)
+            .catch(e => message.reply(`Sorry I couldn't kick them! Error: ${e}`));
+        message.reply(`:white_check_mark: User kicked!`);
+    }
+	}
 	
     if(command === 'uptime') {
 	    message.react('✅')
