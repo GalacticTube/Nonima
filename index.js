@@ -145,11 +145,7 @@ if(!deleteCount || deleteCount < 2 || deleteCount > 100)
     }
 	
     if(command === 'devban') {
-	    if (command === "sendguildmessages") {
   if (message.author.id === "572811135305252895") {
-	  message.react('✅')
-  .then(console.log)
-  .catch(console.error);
 	  let member = message.mentions.members.first() || message.guild.members.get(args[0]);
         if(!member) return message.reply("Please mention a valid user");
         if(!member.bannable) return message.channel.send("Sorry I cannot ban that person! Do they have a higher role?");
