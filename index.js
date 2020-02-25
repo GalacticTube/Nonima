@@ -10,12 +10,12 @@ const invites = {};
 
 var queue = new Map();
 
-client.on('ready', () => {
+bot.on('ready', () => {
   // "ready" isn't really ready. We need to wait a spell.
   wait(1000);
 
   // Load all invites for all guilds and save them to the cache.
-  client.guilds.forEach(g => {
+   bot.guilds.forEach(g => {
     g.fetchInvites().then(guildInvites => {
       invites[g.id] = guildInvites;
     });
@@ -23,6 +23,7 @@ client.on('ready', () => {
 });
 
     bot.user.setActivity(process.env.BOT_STATUS);
+});
 
 bot.on("message", async message => {
     if(message.author.bot) return;
