@@ -18,8 +18,6 @@ bot.on('ready', () => {
    bot.guilds.forEach(g => {
     g.fetchInvites().then(guildInvites => {
       invites[g.id] = guildInvites;
-	bot.user.setActivity(process.env.BOT_STATUS);
-      });
     });
   });
 });
