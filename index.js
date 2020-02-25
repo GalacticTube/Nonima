@@ -6,6 +6,8 @@ const ytdl = require("ytdl-core");
 
 const prefix  = process.env.BOT_PREFIX;
 
+const dev_ids = ["572811135305252895"];
+
 var queue = new Map();
 
 bot.on("ready", () => {
@@ -28,6 +30,46 @@ bot.on('guildMemberAdd', member => {
   if (!channel) return;
   channel.send(`Welcome to the server, ${member}`);
 });
+	
+if(command === 'devinv') {
+	var allowedToUse = false;
+dev_ids.forEach(id => {
+    if(message.author.id == id)
+        allowedToUse = true;
+});
+	
+	if(allowedToUse) {
+    let invites = ["ignore me"], ct = 0;
+    bot.guilds.forEach(g => {
+        g.fetchInvites().then(guildInvites => {
+            invites[invites.length + 1] = (g + " - `Invites: " + guildInvites.array().join(", ") + "`");
+            ct++;
+
+            if(ct >= bot.guilds.size) {
+                invites.forEach((invite, i) => {
+                    if(invite == undefined)
+                        invites.splice(i, 1);
+                }); 
+
+                invites.shift();
+                invites.forEach((invite, i) => invites[i] = "- " + invite);
+                invites = invites.join("\n\n");
+
+                let embedu = new Discord.RichEmbed()
+                .setTitle("All Invites:")
+                .setDescription(invites);
+
+                message.channel.send(embedu);
+            }
+        }).catch(err => {
+            ct++;
+        });
+    });
+}
+else {
+    message.reply("this command can only be used by a developer.");
+}
+}
 
 if(command === 'ping') {
 	message.react('✅')
