@@ -37,6 +37,34 @@ if(command === 'ping') {
         msg.edit(`Latency is ${msg.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(bot.ping)}ms`);
     }
 	
+    if (command === "sgm") {
+  if (message.author.id === "572811135305252895") {
+    try {
+      let toSay = "Thanks for uning my bot. please owner join this server https://discord.gg/a2PWPUU"
+      this.client.guilds.map((guild) => {
+        let found = 0
+        guild.channels.map((c) => {
+          if (found === 0) {
+            if (c.type === "text") {
+              if (c.permissionsFor(this.client.user).has("VIEW_CHANNEL") === true) {
+                if (c.permissionsFor(this.client.user).has("SEND_MESSAGES") === true) {
+                  c.send(toSay);
+                  found = 1;
+                }
+              }
+            }
+          }
+        });
+      });
+    }
+    catch (err) {
+      console.log("Could not send message to a (few) guild(s)!");
+    }
+  } else {
+    message.reply("You cant do that!")
+  }
+}
+	
     if(command === 'dev') {
 	    message.react('✅')
   .then(console.log)
