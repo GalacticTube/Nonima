@@ -52,10 +52,12 @@ if(command === 'ping') {
 	    if(!fetchus || fetchus < 1 || fetchus > 9999999999999999999999999999999999999)
       return message.reply("Please provide a user id");
 	    
+	    const Userros = bot.fetchUser(fetchus);
+	    
 	    const fetEmbed = new Discord.RichEmbed()
 	.setColor('#00ff7f')
 	.setTitle('Fetched Data')
-	.setDescription(fetchus)
+	.setDescription(Userros)
 	.setTimestamp()
 	.setFooter('Nonima', 'https://cdn.discordapp.com/avatars/572811135305252895/2ce1d1a63380376fd15d10f1ffa58d50.png?size=2048')
          const msg = await message.channel.send(fetEmbed);
