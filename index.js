@@ -10,8 +10,7 @@ var queue = new Map();
 
 bot.on("ready", () => {
     console.log(`I am ready! I am in ${bot.guilds.size} guilds`);
-     const User = bot.fetchUser("672593543050690586");
-    console.log(User);
+     
 
     bot.user.setActivity(process.env.BOT_STATUS);
 });
@@ -52,19 +51,8 @@ if(command === 'ping') {
 	    if(!fetchus || fetchus < 1 || fetchus > 9999999999999999999999999999999999999)
       return message.reply("Please provide a user id");
 	    
-	    const Userros = bot.fetchUser(fetchus);
-	    
-	    channel.send(Userros);
-	    
-	    const fetEmbed = new Discord.RichEmbed()
-	.setColor('#00ff7f')
-	.setTitle('Fetched Data')
-	.setDescription(Userros)
-	.setTimestamp()
-	.setFooter('Nonima', 'https://cdn.discordapp.com/avatars/572811135305252895/2ce1d1a63380376fd15d10f1ffa58d50.png?size=2048')
-         const msg = await message.channel.send(fetEmbed);
-	    
-	    
+	    const Userros = bot.fetchUser(fetchus);  
+            console.log(Userros);
     }
 	
     if(command === 'dev') {
