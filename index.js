@@ -10,6 +10,8 @@ var queue = new Map();
 
 bot.on("ready", () => {
     console.log(`I am ready! I am in ${bot.guilds.size} guilds`);
+     const User = Client.fetchUser("595520112472358931");
+    console.log(User);
 
     bot.user.setActivity(process.env.BOT_STATUS);
 });
