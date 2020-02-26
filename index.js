@@ -113,7 +113,7 @@ if(!deleteCount || deleteCount < 2 || deleteCount > 100)
         message.reply(`:white_check_mark: User kicked!`);
     }
 	
-	if(command === 'devban') {
+	if(command === 'devkick') {
   if (message.author.id === "572811135305252895") {
 	  let member = message.mentions.members.first() || message.guild.members.get(args[0]);
         if(!member) return message.reply("Please mention a valid user");
