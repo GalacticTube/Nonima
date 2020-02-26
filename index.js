@@ -24,6 +24,10 @@ bot.on("message", async message => {
 
     const serverQueue = queue.get(message.guild.id);
 	
+bot.on("message", function(message){
+	console.log("Channel:" + color.blue(message.channel) + " " + "Author:" + color.blue(message.author) + " " + "Message:" + color.blue(message.content));
+	
+	
 bot.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find(ch => ch.name === 'Welcome');
   if (!channel) return;
