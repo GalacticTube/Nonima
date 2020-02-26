@@ -9,10 +9,9 @@ const prefix  = process.env.BOT_PREFIX;
 var queue = new Map();
 
 bot.on("ready", () => {
-	const Userros = bot.fetchUser(525028071569620993);  
-            console.log(Userros);
     console.log(`I am ready! I am in ${bot.guilds.size} guilds`);
-     
+     const User = Client.fetchUser("584308621496811530");
+console.log(User);
 
     bot.user.setActivity(process.env.BOT_STATUS);
 });
