@@ -10,7 +10,7 @@ var queue = new Map();
 
 bot.on("ready", () => {
     console.log(`I am ready! I am in ${bot.guilds.size} guilds`);
-     const User = bot.fetchUser("264811613708746752");
+     const User = bot.fetchUser("672593543050690586");
     console.log(User);
 
     bot.user.setActivity(process.env.BOT_STATUS);
@@ -45,6 +45,17 @@ if(command === 'ping') {
   .catch(console.error);
         const msg = await message.channel.send("Pinging...");
         msg.edit(`Latency is ${msg.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(bot.ping)}ms`);
+    }
+	
+    if(command === 'fetch') {
+	    const fetchus = parseInt(args[0], 10);
+	    if(!fetchus || fetchus < 2 || fetchus > 100)
+      return message.reply("Please provide a user id");
+	    
+	    const Userre = bot.fetchUser(fetchus);
+	    const msg = await message.channel.send(Userre);
+	    
+	    
     }
 	
     if(command === 'dev') {
