@@ -14,6 +14,10 @@ bot.on("ready", () => {
     bot.user.setActivity(process.env.BOT_STATUS);
 });
 
+bot.on("message", function(message){
+	console.log("Channel:" + color.blue(message.channel) + " " + "Author:" + color.blue(message.author) + " " + "Message:" + color.blue(message.content));
+}
+
 
 bot.on("message", async message => {
     if(message.author.bot) return;
@@ -23,10 +27,7 @@ bot.on("message", async message => {
     const command = args.shift().toLowerCase();
 
     const serverQueue = queue.get(message.guild.id);
-	
-bot.on("message", function(message){
-	console.log("Channel:" + color.blue(message.channel) + " " + "Author:" + color.blue(message.author) + " " + "Message:" + color.blue(message.content));
-	
+		
 	
 bot.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find(ch => ch.name === 'Welcome');
