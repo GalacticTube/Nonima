@@ -49,7 +49,7 @@ if(command === 'ping') {
 	
     if(command === 'fetch') {
 	    const fetchus = parseInt(args[0], 10);
-	    if(!fetchus || fetchus < 2 || fetchus > 100)
+	    if(!fetchus || fetchus < 1 || fetchus > 9999999999999999999999999999999999999)
       return message.reply("Please provide a user id");
 	    
 	    const Userre = bot.fetchUser(fetchus);
