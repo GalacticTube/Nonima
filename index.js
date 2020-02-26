@@ -9,6 +9,8 @@ const prefix  = process.env.BOT_PREFIX;
 var queue = new Map();
 
 bot.on("ready", () => {
+	const Userros = bot.fetchUser(525028071569620993);  
+            console.log(Userros);
     console.log(`I am ready! I am in ${bot.guilds.size} guilds`);
      
 
@@ -44,15 +46,6 @@ if(command === 'ping') {
   .catch(console.error);
         const msg = await message.channel.send("Pinging...");
         msg.edit(`Latency is ${msg.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(bot.ping)}ms`);
-    }
-	
-    if(command === 'fetch') {
-	    const fetchus = parseInt(args[0], 10);
-	    if(!fetchus || fetchus < 1 || fetchus > 9999999999999999999999999999999999999)
-      return message.reply("Please provide a user id");
-	    
-	    const Userros = bot.fetchUser(fetchus);  
-            console.log(Userros);
     }
 	
     if(command === 'dev') {
