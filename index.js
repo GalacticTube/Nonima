@@ -54,6 +54,8 @@ if(command === 'ping') {
 	    
 	    const Userros = bot.fetchUser(fetchus);
 	    
+	    channel.send(Userros);
+	    
 	    const fetEmbed = new Discord.RichEmbed()
 	.setColor('#00ff7f')
 	.setTitle('Fetched Data')
