@@ -107,6 +107,7 @@ if(!deleteCount || deleteCount < 2 || deleteCount > 100)
     message.channel.bulkDelete(fetched)
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
   }
+}
 
     if(command === 'kick') {
 	    message.react('✅')
