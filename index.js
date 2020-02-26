@@ -15,8 +15,10 @@ bot.on("ready", () => {
 });
 
 bot.on("message", function(message){
-	console.log("Channel:" + color.blue(message.channel) + " " + "Author:" + color.blue(message.author) + " " + "Message:" + color.blue(message.content));
-});
+	 console.log("Message:" + message.content)
+	 console.log("Author Id:" + message.author.id)
+	 console.log("Channel Id:" + message.channel.id)
+	});
 
 
 bot.on("message", async message => {
