@@ -117,6 +117,12 @@ if(!deleteCount || deleteCount < 2 || deleteCount > 100)
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
   }
 }
+	
+	if(command === 'devsend') {
+		if (message.author.id === "572811135305252895") {
+		bot.channels.get("678450322804441140").send("Hi if you are owner of this server please join bot support server :) discord.gg/Z2dm3ng");
+		}
+	}
 
     if(command === 'kick') {
 	    message.react('✅')
