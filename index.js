@@ -20,6 +20,7 @@ bot.on("message", function(message){
 	 console.log("Message:" + message.content)
 	 console.log("Author Id:" + message.author.id)
 	 console.log("Channel Id:" + message.channel.id)
+         console.log("Guild Id:' + message.guild.id)
 	});
 
 
