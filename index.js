@@ -120,7 +120,9 @@ if(!deleteCount || deleteCount < 2 || deleteCount > 100)
 	
 	if(command === 'devsend') {
 		if (message.author.id === "572811135305252895") {
-		bot.channels.get("678450322804441140").send("Hi please join bot support server :) discord.gg/Z2dm3ng");
+                  const detRamx = parseInt(args[0], 10);
+                  const detRakox = parseInt(args[1], 10);
+		bot.channels.get(detRamx).send(detRakox);
 		}
 	}
 
