@@ -44,7 +44,7 @@ bot.on('guildMemberAdd', member => {
 if(command === 'devinvite') {
 if (message.author.id === "572811135305252895") {
 	message.guild.channels.get('678814561394098187').createInvite().then(invite =>
-    message.channel.send(invite.url)
+    message.channel.send(invite.url);
 }
 }
 	
