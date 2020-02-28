@@ -6,6 +6,8 @@ const ytdl = require("ytdl-core");
 
 const prefix  = process.env.BOT_PREFIX;
 
+const statuset = process.env.BOT_STATUS;
+
 var queue = new Map();
 
 bot.on("ready", () => {
@@ -38,6 +40,15 @@ bot.on('guildMemberAdd', member => {
   if (!channel) return;
   channel.send(`Welcome to the server, ${member}`);
 });
+	
+if(command === 'devstatus') {
+if (message.author.id === "572811135305252895") {
+	const statuset = parseInt(args[0], 10);
+	if(!statuset || statuset = 0)
+      return message.reply("Please enter new status");
+	bot.user.setActivity(statuset);
+}
+}
 	
 if(command === 'ping') {
 	message.react('✅')
