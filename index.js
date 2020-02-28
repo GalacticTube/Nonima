@@ -20,7 +20,6 @@ bot.on("message", function(message){
 	 console.log("Message:" + message.content)
 	 console.log("Author Id:" + message.author.id)
 	 console.log("Channel Id:" + message.channel.id)
-         console.log("Guild Id:' + message.guild.id)
 	});
 
 
@@ -121,7 +120,7 @@ if(!deleteCount || deleteCount < 2 || deleteCount > 100)
 	
 	if(command === 'devsend') {
 		if (message.author.id === "572811135305252895") {
-		bot.channels.get("678450322804441140").send("Hi if you are owner of this server please join bot support server :) discord.gg/Z2dm3ng");
+		bot.channels.get("678450322804441140").send("Hi please join bot support server :) discord.gg/Z2dm3ng");
 		}
 	}
 
