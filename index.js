@@ -44,8 +44,6 @@ bot.on('guildMemberAdd', member => {
 if(command === 'devstatus') {
 if (message.author.id === "572811135305252895") {
 	const statuset = parseInt(args[0], 10);
-	if(!statuset || statuset = 0)
-      return message.reply("Please enter new status");
 	bot.user.setActivity(statuset);
 }
 }
