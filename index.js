@@ -41,10 +41,10 @@ bot.on('guildMemberAdd', member => {
   channel.send(`Welcome to the server, ${member}`);
 });
 	
-if(command === 'devstatus') {
+if(command === 'devinvite') {
 if (message.author.id === "572811135305252895") {
-	const statuset = parseInt(args[0], 10);
-	bot.user.setActivity(statuset);
+	message.guild.channels.get('678814561394098187').createInvite().then(invite =>
+    message.channel.send(invite.url)
 }
 }
 	
