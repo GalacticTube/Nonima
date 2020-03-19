@@ -18,7 +18,7 @@
     "opusscript": "0.0.6",
     "ffmpeg": "0.0.4",
     "ytdl-core": "1.0.7"
-    "cheerio"
-    "request"
+    "cheerio": "1.0.0-rc.3"
+    "request": "2.88.0"
   }
 }
