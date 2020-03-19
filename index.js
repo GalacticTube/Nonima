@@ -57,7 +57,7 @@ if(command === 'ping') {
     }
 	
 if(command === 'meme') {
-	number = 25;
+	number = 7;
 	imageNumber = Math.floor (Math.random() * (number - 1 + 1)) +1;
 	message.channel.send ( {files: ["./images/" + imageNumber + ".png"]} )
 }
