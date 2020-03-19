@@ -4,10 +4,6 @@ const bot = new Discord.Client();
 
 const ytdl = require("ytdl-core");
 
-const cheerio = require("cheerio");
-
-const request = require("request");
-
 const prefix  = process.env.BOT_PREFIX;
 
 const statuset = process.env.BOT_STATUS;
@@ -61,41 +57,10 @@ if(command === 'ping') {
     }
 	
 if(command === 'meme') {
-image(message);
+	number = 25;
+	imageNumber = Math.floor (Math.random() * (number - 1 + 1)) +1;
+	message.channel.send ( {files: ["./images/" + imageNumber + ".png"]} )
 }
-	
-	function image(message){
-		
-		var options = {
-			url: "http://results.dogpile.com/serp?qc=images&q=" + "cursed image",
-			method: "GET",
-			headers: {
-				"Accept": "text/html",
-				"User-Agent": "Chrome"
-			}
-		};
-		
-		request(options, function(error, response, responseBody) {
-			if (error) {
-				return;
-			}
-			
-			
-			$ = cheerio.load(responseBody);
-			
-			var links = $(".image a.link");
-			
-			var urls = new Array(links.length).fill(0).map((v, i) => links.eq(i).attr("href"));
-			
-			console.log(urls);
-			if (!urls.length) {
-				
-				returm;
-			}
-			
-			message.channel.send( urls[Math.floor(Math.random() * urls.length)] + " " + message.guild.members.random());
-	
-	});
 	
     if(command === 'dev') {
 	    message.react('✅')
