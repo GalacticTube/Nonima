@@ -1,5 +1,5 @@
 {
-  "name": "Nonims",
+  "name": "Nonimabetaheh",
   "version": "0.1.0",
   "description": "Nonima cuttest and useful bot",
   "main": "index.js",
@@ -11,14 +11,14 @@
     "bot",
     "discordbot"
   ],
-  "author": "iCrawl",
+  "author": "NJ3ZNAY0MY",
   "license": "MIT",
   "dependencies": {
-    "discord.js": "11.5.1",
-    "opusscript": "0.0.6",
+    "cheerio": "^1.0.0-rc.3",
+    "discord.js": "^12.0.2",
     "ffmpeg": "0.0.4",
-    "ytdl-core": "1.0.7"
-    "cheerio": "1.0.0-rc.3"
-    "request": "2.88.0"
+    "opusscript": "0.0.7",
+    "request": "^2.88.2",
+    "ytdl-core": "^2.0.0"
   }
 }
