@@ -35,12 +35,6 @@ bot.on("message", async message => {
     const serverQueue = queue.get(message.guild.id);
 		
 	
-bot.on('guildMemberAdd', member => {
-  const channel = member.guild.channels.find(ch => ch.name === 'Welcome');
-  if (!channel) return;
-  channel.send(`Welcome to the server, ${member}`);
-});
-	
 if(command === 'devinvite') {
 if (message.author.id === "572811135305252895") {
 	message.guild.channels.get('678814561394098187').createInvite().then(invite =>
@@ -57,7 +51,7 @@ if(command === 'ping') {
     }
 	
 if(command === 'meme') {
-	number = 7;
+	number = process.env.BOT_IMAGE;
 	imageNumber = Math.floor (Math.random() * (number - 1 + 1)) +1;
 	message.channel.send ( {files: ["./images/" + imageNumber + ".png"]} )
 }
