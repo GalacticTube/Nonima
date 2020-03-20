@@ -35,11 +35,10 @@ bot.on("message", async message => {
     const serverQueue = queue.get(message.guild.id);
 		
 	
-if(command === 'devinvite') {
-if (message.author.id === "572811135305252895") {
-	message.guild.channels.get('678814561394098187').createInvite().then(invite =>
-    message.channel.send(invite.url));
-}
+if(command === 'meme') {
+	number = process.env.BOT_IMAGE;
+	imageNumber = Math.floor (Math.random() * (number - 1 + 1)) +1;
+	message.channel.send ( {files: ["./images/" + imageNumber + ".png"]} )
 }
 	
 if(command === 'ping') {
@@ -302,11 +301,6 @@ function playSong(guild, song) {
     dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
 }
 
-if(command === 'meme') {
-	number = process.env.BOT_IMAGE;
-	imageNumber = Math.floor (Math.random() * (number - 1 + 1)) +1;
-	message.channel.send ( {files: ["./images/" + imageNumber + ".png"]} )
-}
 
 
 bot.login(process.env.BOT_TOKEN);
