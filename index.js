@@ -8,12 +8,12 @@ const prefix  = process.env.BOT_PREFIX;
 
 const statuset = process.env.BOT_STATUS;
 
+const numbetrr = process.env.BOT_IMAGE;
+
 var queue = new Map();
 
 bot.on("ready", () => {
     console.log(`I am ready! I am in ${bot.guilds.size} guilds`);
-     const User = bot.fetchUser("218776305532010497");
-console.log(User);
 
     bot.user.setActivity(process.env.BOT_STATUS);
 });
@@ -36,9 +36,8 @@ bot.on("message", async message => {
 		
 	
 if(command === 'meme') {
-	number = process.env.BOT_IMAGE;
-	imageNumber = Math.floor (Math.random() * (number - 1 + 1)) +1;
-	message.channel.send ( {files: ["./images/" + imageNumber + ".png"]} )
+	imageNumbetrr = Math.floor (Math.random() * (numbetrr - 1 + 1)) +1;
+	message.channel.send ( {files: ["./images/" + imageNumbetrr + ".png"]} )
 }
 	
 if(command === 'ping') {
@@ -232,7 +231,6 @@ if(!deleteCount || deleteCount < 2 || deleteCount > 100)
         // !play url
 
         play(message, serverQueue);
-		message.reply(`This is beta feature. music sometimes can lag and crash`);
     }
 
 });
