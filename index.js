@@ -50,11 +50,6 @@ if(command === 'ping') {
         msg.edit(`Latency is ${msg.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(bot.ping)}ms`);
     }
 	
-if(command === 'meme') {
-	number = process.env.BOT_IMAGE;
-	imageNumber = Math.floor (Math.random() * (number - 1 + 1)) +1;
-	message.channel.send ( {files: ["./images/" + imageNumber + ".png"]} )
-}
 	
     if(command === 'dev') {
 	    message.react('✅')
@@ -305,6 +300,12 @@ function playSong(guild, song) {
             console.log(error);
         })
     dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
+}
+
+if(command === 'meme') {
+	number = process.env.BOT_IMAGE;
+	imageNumber = Math.floor (Math.random() * (number - 1 + 1)) +1;
+	message.channel.send ( {files: ["./images/" + imageNumber + ".png"]} )
 }
 
 
