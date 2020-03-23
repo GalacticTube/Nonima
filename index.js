@@ -35,11 +35,6 @@ bot.on("message", async message => {
     const serverQueue = queue.get(message.guild.id);
 		
 	
-if(command === 'meme') {
-	imageNumbetrr = Math.floor (Math.random() * (numbetrr - 1 + 1)) +1;
-	message.channel.send ( {files: ["./images/" + imageNumbetrr + ".png"]} )
-}
-	
 if(command === 'ping') {
 	message.react('✅')
   .then(console.log)
