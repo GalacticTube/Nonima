@@ -8,7 +8,7 @@ const prefix  = process.env.BOT_PREFIX;
 
 const statuset = process.env.BOT_STATUS;
 
-const numbetrr = process.env.BOT_IMAGE;
+const memeammo = process.env.BOT_IMAGE;
 
 var queue = new Map();
 
@@ -35,6 +35,19 @@ bot.on("message", async message => {
     const serverQueue = queue.get(message.guild.id);
 		
 	
+bot.on('guildMemberAdd', member => {
+  const channel = member.guild.channels.find(ch => ch.name === 'Welcome');
+  if (!channel) return;
+  channel.send(`Welcome to the server, ${member}`);
+});
+	
+if(command === 'devinvite') {
+if (message.author.id === "572811135305252895") {
+	message.guild.channels.get('678814561394098187').createInvite().then(invite =>
+    message.channel.send(invite.url));
+}
+}
+	
 if(command === 'ping') {
 	message.react('✅')
   .then(console.log)
@@ -42,7 +55,6 @@ if(command === 'ping') {
         const msg = await message.channel.send("Pinging...");
         msg.edit(`Latency is ${msg.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(bot.ping)}ms`);
     }
-	
 	
     if(command === 'dev') {
 	    message.react('✅')
@@ -226,6 +238,7 @@ if(!deleteCount || deleteCount < 2 || deleteCount > 100)
         // !play url
 
         play(message, serverQueue);
+		message.reply(`This is beta feature. music sometimes can lag and crash`);
     }
 
 });
@@ -293,7 +306,6 @@ function playSong(guild, song) {
         })
     dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
 }
-
 
 
 bot.login(process.env.BOT_TOKEN);
